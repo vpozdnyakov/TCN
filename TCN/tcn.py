@@ -9,10 +9,7 @@ class Chomp1d(nn.Module):
         self.chomp_size = chomp_size
 
     def forward(self, x):
-        if self.chomp_size:
-            return x[:, :, :-self.chomp_size].contiguous()
-        else:
-            return x
+        return x[:, :, :-self.chomp_size].contiguous()
 
 
 class TemporalBlock(nn.Module):
